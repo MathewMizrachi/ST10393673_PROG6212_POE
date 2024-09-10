@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http; // Add this for IFormFile
 
 namespace ST10393673_PROG6212_POE.Models
 {
@@ -18,9 +19,12 @@ namespace ST10393673_PROG6212_POE.Models
         [Required]
         [Display(Name = "Submission Date")]
         [DataType(DataType.Date)]
-        public DateTime SubmissionDate { get; set; }
+        public DateTime SubmissionDate { get; set; } = DateTime.Now;
 
         [Display(Name = "Status")]
-        public string Status { get; set; }
+        public string Status { get; set; } = "Pending Review";
+
+        [Display(Name = "Supporting Documents")]
+        public IFormFile SupportingDocuments { get; set; }
     }
 }
