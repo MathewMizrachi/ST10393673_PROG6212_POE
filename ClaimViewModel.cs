@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Http;  // Add this for IFormFile
+using Microsoft.AspNetCore.Http;  
 
 namespace ST10393673_PROG6212_POE.Models
 {
@@ -30,8 +30,10 @@ namespace ST10393673_PROG6212_POE.Models
         [Display(Name = "Status")]
         public string Status { get; set; } = "Pending Review";
 
-        // Add this property for file upload
+     
         [Display(Name = "Supporting Documents")]
         public IFormFile SupportingDocuments { get; set; }
+
+        public string CoordinatorComments { get; set; }
     }
 }
